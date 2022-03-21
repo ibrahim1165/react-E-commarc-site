@@ -1,0 +1,41 @@
+.product img{
+    width: 260px;
+    height: 260px;
+    border-radius: 8px;
+    margin: 7px;
+
+}
+.product{
+    width: 300px;
+    height: 510px;
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+    margin: 8px;
+    position: relative;
+}
+.product-name{
+    font-family: 'lato';
+    font-style: normal;
+    font-weight:400;
+    font-size :15px;
+    line-height:25px;
+    margin-top: 8px;
+}
+.products-infu{
+   margin:0 14px;
+}
+.products-infu p{
+    margin-bottom:0;
+    margin-top: 5px;
+}
+.btn-cart{
+    width: 100%;
+    background-color:#FFE0B3;
+    border-radius:5px 20px 15px 15px;
+    border:none;
+    position:absolute;
+    bottom:0;
+}
+.btn-cart:hover{
+    background-color:orange;
+}
