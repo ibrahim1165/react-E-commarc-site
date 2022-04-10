@@ -1,17 +1,31 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../images/Logo.svg'
 import './Header.css'
+import { useAuthState} from 'react-firebase-hooks/auth';
+import auth from '../../firebase.int';
+import { signOut } from 'firebase/auth';
 
-const Header = () => {
+const Header = ({orders,about,shop,inventory}) => {
+    const [user] = useAuthState(auth)
+    const handleSingOut =()=>{
+        signOut(auth)
+    }
     return (
         <nav className="Header">
          <img src={logo} alt=""/>
        <div>
-       <a href="#">Shop</a>
-       <a href="#">Orders</a>
-       <a href="#">Inventory</a>
-       <a href="#">About</a>
+       <Link to="shop">Shop</Link>
+       <Link to="orders">Orders</Link>
+       <Link to="inventory">Inventory</Link>
+       <Link to="about">About</Link>
        </div>
+       { user?
+       <button onClick={handleSingOut} >SingOut</button>
+       :
+        <Link to="/login">Login</Link>
+       }
+       
         </nav>
     );
 };
